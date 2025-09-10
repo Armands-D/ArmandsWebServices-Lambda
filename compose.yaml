@@ -1,0 +1,18 @@
+name: armands-web-services
+
+services:
+
+  lambda:
+    container_name: lambda-app
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    build:
+      dockerfile: ./lambda.dockerfile
+    network_mode: host
+
+# add shared network for rabbit and lambda
+  #rabbitmq:
+
+# networks:
+#   host:
+#     driver: host
